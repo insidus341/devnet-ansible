@@ -8,9 +8,13 @@
   tasks:
     - name: Get facts
       ios_facts:
-        gather_subset: "interfaces"
+        gather_subset:
+          - interfaces
 
-    - name: Output facts
+      register: interfaces
+      
+
+    - name: Output management IP
       debug:
-        var: ios_facts
+        var: interfaces
     
