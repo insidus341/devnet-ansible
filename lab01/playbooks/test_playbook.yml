@@ -11,3 +11,5 @@
         commands: "do show version | include uptime"
       
       register: uptime
+      debug:
+        var: uptime
