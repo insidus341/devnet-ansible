@@ -7,4 +7,5 @@
 
   tasks:
     - name: Get uptime
-      commands: "show version | include uptime"
+      ios_config:
+        commands: "show version | include uptime"
