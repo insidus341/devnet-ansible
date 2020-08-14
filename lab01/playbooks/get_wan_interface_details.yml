@@ -9,12 +9,9 @@
     - name: Get facts
       ios_facts:
         gather_subset:
-          - interfaces
-
-      register: interfaces
-      
+          - interfaces      
 
     - name: Output management IP
       debug:
-        var: interfaces
+        var: ansible_net_interfaces['{{ mgmt_interface }}']
     
