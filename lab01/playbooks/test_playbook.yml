@@ -8,7 +8,6 @@
   tasks:
     - name: Get facts
       ios_facts:
-      register: ios_facts
       
     - name: Output Facts
       debug:
