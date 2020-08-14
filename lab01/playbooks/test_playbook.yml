@@ -12,6 +12,4 @@
       
     - name: Output Facts
       debug:
-        var: ansible_net_serialnum
-      debug:
         var: ansible_net_version
