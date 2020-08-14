@@ -2,3 +2,4 @@
 
 mgmt_interface: GigabitEthernet1
 ipv4_addr: 192.168.0.80
+description: Management interface. Managed by Ansible
