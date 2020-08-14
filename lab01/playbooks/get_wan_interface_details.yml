@@ -1,6 +1,23 @@
 ---
 
-- name: PLAY 1 - Get Management Interface IP
+- name: PLAY 1 - Set Management Interface IP
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Generate Jinja Template For Mgmt Interface
+      template:
+        src: templates/node_mgmt_interface.j2
+        dest: configs/{{ inventory_hostname }}.cfg
+
+
+    # - name: Push Mgmt Interface Configuration
+    #  ios_config:
+        # src: emplates/node_mgmt_interface.j2
+    #    src: configs/{{ inventory_hostname }}.cfg    
+
+- name: PLAY 2 - Get Management Interface IP
   hosts: csr1kv
   connection: network_cli
   gather_facts: no
@@ -12,8 +29,6 @@
           - interfaces      
 
     - name: Output management IP
-      vars: 
-        mgnt_interface_ipv4: ansible_net_interfaces['{{ mgmt_interface }}']['ipv4'][0]['address']
       debug:
-        var: mgnt_interface_ipv4
+        var: ansible_net_interfaces['{{ mgmt_interface }}']['ipv4'][0]['address']
     

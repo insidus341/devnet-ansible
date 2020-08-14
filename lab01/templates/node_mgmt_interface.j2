@@ -1,0 +1,9 @@
+#mgmt interface config
+
+!
+interface {{ mgmt_interface }}
+  description management_interface
+  ip address {{ ipv4_addr }} 255.255.255.0
+  negotiation auto
+  cdp enabled
+!
