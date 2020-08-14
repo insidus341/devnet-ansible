@@ -12,10 +12,10 @@
         dest: configs/{{ inventory_hostname }}.cfg
 
 
-    # - name: Push Mgmt Interface Configuration
-    #  ios_config:
+    - name: Push Mgmt Interface Configuration
+      ios_config:
         # src: emplates/node_mgmt_interface.j2
-    #    src: configs/{{ inventory_hostname }}.cfg    
+        src: configs/{{ inventory_hostname }}.cfg    
 
 - name: PLAY 2 - Get Management Interface IP
   hosts: csr1kv
