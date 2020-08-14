@@ -1,0 +1,9 @@
+[all:vars]
+location=Lab
+ansible_user=james
+ansible_ssh_pass=admin
+ansible_network_os=ios
+
+[csr1kv]
+csr1kv-1 mgmt_interface=GigabitEthernet1
+csr1kv-2 mgmt_interface=GigabitEthernet1

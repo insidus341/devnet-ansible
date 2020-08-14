@@ -1,0 +1,10 @@
+---
+
+- name: PLAY 1 - Check device is online
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Get uptime
+      commands: "show version | include uptime"
