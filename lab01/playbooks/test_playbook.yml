@@ -8,4 +8,8 @@
   tasks:
     - name: Get uptime
       ios_config:
-        commands: "show version | include uptime"
+        commands: "do show version | include uptime"
+      
+      register: uptime
+      debug:
+        var: uptime
