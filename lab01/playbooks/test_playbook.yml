@@ -6,10 +6,10 @@
   gather_facts: no
 
   tasks:
-    - name: Get uptime
-      ios_config:
-        commands: "do show version | include uptime"
+    - name: Get facts
+      ios_facts:
+      register: ios_facts
       
-      register: uptime
+    - name: Output Facts
       debug:
-        var: uptime
+        var: ansible_net_serialnum
