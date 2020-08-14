@@ -14,8 +14,8 @@
 
     - name: Push Mgmt Interface Configuration
       ios_config:
-        src: ../templates/node_mgmt_interface.j2 
-        commands: "copy running-config startup-config"
+        src: ../templates/node_mgmt_interface.j2
+        save_when: modified
 
 - name: PLAY 2 - Get Management Interface IP
   hosts: csr1kv
