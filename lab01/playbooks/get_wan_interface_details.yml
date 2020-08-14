@@ -8,13 +8,13 @@
   tasks:
     - name: Generate Jinja Template For Mgmt Interface
       template:
-        src: templates/node_mgmt_interface.j2
+        src: ../templates/node_mgmt_interface.j2
         dest: configs/{{ inventory_hostname }}.cfg
 
 
     - name: Push Mgmt Interface Configuration
       ios_config:
-        src: templates/node_mgmt_interface.j2 
+        src: ../templates/node_mgmt_interface.j2 
         commands: "copy running-config startup-config"
 
 - name: PLAY 2 - Get Management Interface IP
