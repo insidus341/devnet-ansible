@@ -1,0 +1,8 @@
+#lan interface config
+
+!
+interface {{ lan_interface }}
+  description {{ lan_description }}
+  ip address {{ lan_ipv4_addr }} 255.255.255.0
+  negotiation auto
+!

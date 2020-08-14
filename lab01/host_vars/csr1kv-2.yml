@@ -3,3 +3,11 @@
 mgmt_interface: GigabitEthernet1
 ipv4_addr: 192.168.0.81
 description: Management interface. Managed by Ansible
+
+lan_r2r_interface: GigabitEthernet2
+lan_r2r_description: To other router
+lan_r2r_ipv4_addr: 10.10.0.2
+
+lan_interface: GigabitEthernet4
+lan_description: Lan interface
+lan_ipv4_addr: 10.20.20.1
