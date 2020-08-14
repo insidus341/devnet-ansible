@@ -13,5 +13,5 @@
 
     - name: Output management IP
       debug:
-        var: ansible_net_interfaces['{{ mgmt_interface }}']
+        var: ansible_net_interfaces['{{ mgmt_interface }}']['ipv4']['address']
     
