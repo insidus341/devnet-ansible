@@ -12,6 +12,8 @@
           - interfaces      
 
     - name: Output management IP
+      vars: 
+        mgnt_interface_ipv4: ansible_net_interfaces['{{ mgmt_interface }}']['ipv4'][0]['address']
       debug:
-        var: ansible_net_interfaces['{{ mgmt_interface }}']['ipv4'][0]['address']
+        var: mgnt_interface_ipv4
     
