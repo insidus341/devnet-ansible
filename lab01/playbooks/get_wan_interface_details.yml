@@ -5,11 +5,12 @@
   connection: network_cli
   gather_facts: no
 
-  - tasks:
-    name: Something
-    ios_facts:
-    gather_subset: "interfaces"
+  tasks:
+    - name: Something
+      ios_facts:
+      gather_subset: "interfaces"
 
-    debug:
-      var: ios_facts
+    - name: Output facts
+      debug:
+        var: ios_facts
     
