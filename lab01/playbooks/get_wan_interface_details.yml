@@ -6,9 +6,9 @@
   gather_facts: no
 
   tasks:
-    - name: Something
+    - name: Get facts
       ios_facts:
-      gather_subset: "interfaces"
+        gather_subset: "interfaces"
 
     - name: Output facts
       debug:
