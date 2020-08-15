@@ -14,7 +14,7 @@
     - name: Check Route Exists
       assert:
         that: 
-          - eigrp_routes.stdout != ""
+          - eigrp_routes.stdout[0] != ""
         success_msg: "EIGRP Route Exists"
         fail_msg: "EIGRP Route Does NOT Exist!"
       
