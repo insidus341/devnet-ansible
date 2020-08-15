@@ -8,7 +8,7 @@
   tasks: 
     - name: Get CSR1Kv Route Table
       ios_command:
-        commands: show ip route eigrp
+        commands: show ip route eigrp | include {{ lan_r2r_interface }}
       register: eigrp_routes
 
     - name: Print Route Table
