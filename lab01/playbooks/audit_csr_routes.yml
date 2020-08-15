@@ -1,0 +1,16 @@
+---
+
+- name: AUDIT CSR ROUTES
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks: 
+    - name: Get CSR1Kv Route Table
+      ios_command:
+        commands: show ip route eigrp
+      register: eigrp_routes
+
+      debug:
+        var: eigrp_routes
+          
