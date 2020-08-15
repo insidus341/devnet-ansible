@@ -12,7 +12,10 @@
       register: eigrp_routes
 
     - name: Check Route Exists
-      debug:
-        msg: "EIGRP Route Exists"
-      when: eigrp_routes.stdout != ""
+      assert:
+        that: 
+          - eigrp_routes.stdout != ""
+        success_msg: "EIGRP Route Exists"
+        fail_msg: "EIGRP Route Does NOT Exist!"
+      
           
