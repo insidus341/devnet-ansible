@@ -11,7 +11,8 @@
         commands: show ip route eigrp | include {{ lan_r2r_interface }}
       register: eigrp_routes
 
-    - name: Print Route Table
+    - name: Check Route Exists
       debug:
-        var: eigrp_routes
+        msg: "EIGRP Route Exists"
+      when: eigrp_routes.stdout != ""
           
