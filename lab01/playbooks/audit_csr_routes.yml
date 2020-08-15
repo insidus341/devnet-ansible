@@ -11,6 +11,7 @@
         commands: show ip route eigrp
       register: eigrp_routes
 
+    - name: Print Route Table
       debug:
         var: eigrp_routes
           
