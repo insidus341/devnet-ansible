@@ -38,7 +38,7 @@
     - name: Enable CDP
       ios_config:
         commands: "cdp run"
-        
+
 
 - name: ENABLE ROUTING PROTOCOLS
   hosts: csr1kv
@@ -51,5 +51,6 @@
         lines:
           - network 10.0.0.0 0.255.255.255
         parents: router eigrp 10
+        save_when: modified
           
 
