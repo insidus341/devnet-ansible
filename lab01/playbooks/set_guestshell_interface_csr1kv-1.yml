@@ -26,8 +26,10 @@
     - name: CREATE ACLs
       ios_config:
         lines:
-          - ip nat outside source list NAT_ACL interface {{ mgmt_interface }} overload
+          - ip nat inside source list NAT_ACL interface {{ mgmt_interface }} overload
+
     
+
     - name: APPLY ACL
       ios_config:
         lines:
