@@ -26,7 +26,6 @@
     - name: CREATE ACLs
       ios_command:
         commands:
-          - ip nat inside source static tcp 192.168.35.2 7023 {{ ipv4_addr }} 7023 extendable
           - ip nat outside source list NAT_ACL interface {{ mgmt_interface }} overload
     
     - name: APPLY ACL
