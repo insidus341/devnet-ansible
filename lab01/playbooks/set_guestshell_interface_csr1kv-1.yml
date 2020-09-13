@@ -1,7 +1,7 @@
 ---
 
 - name: SETUP GUESTSHELL INTERFACE
-  hosts: csr1kv
+  hosts: csr1kv-1
   connection: network_cli
   gather_facts: no
 
