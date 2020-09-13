@@ -29,6 +29,9 @@
         save_when: modified
 
 
+
+---
+
 - name: ENABLE CDP
   hosts: csr1kv
   connection: network_cli
@@ -39,6 +42,8 @@
       ios_config:
         commands: "cdp run"
 
+
+---
 
 - name: ENABLE ROUTING PROTOCOLS
   hosts: csr1kv
