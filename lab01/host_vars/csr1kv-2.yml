@@ -11,6 +11,3 @@ lan_r2r_ipv4_addr: 10.10.0.2
 lan_interface: GigabitEthernet4
 lan_description: Lan interface
 lan_ipv4_addr: 10.20.20.1
-
-netconf.user: "cisco"
-netconf.pass: "cisco"

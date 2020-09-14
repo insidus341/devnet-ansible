@@ -14,8 +14,8 @@
 
     - name: CREATE USER
       ios_config:
-        lines:
-          - username {{ netconf.user }} privilege 15 password 0 {{ netconf.pass }}
+        commands:
+          - username {{ netconf_user }} privilege 15 password 0 {{ netconf_pass }}
 
 
     - name: ENABLE AAA
