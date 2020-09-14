@@ -1,4 +1,2 @@
 ansible_network_os: ios
 ansible_ssh_common_args: "-oKexAlgorithms=+diffie-hellman-group14-sha1"
-netconf.user: "cisco"
-netconf.pass: "cisco"
