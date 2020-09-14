@@ -1,7 +1,7 @@
 ---
 
 - name: ENABLE AND SETUP NETCONF
-  hosts: csr1kv-1
+  hosts: csr1kv
   connection: network_cli
   gather_facts: no
 
@@ -10,7 +10,7 @@
       ios_config:
         lines:
           - netconf-yang
-          
+  
 
     - name: CREATE USER
       ios_config:
