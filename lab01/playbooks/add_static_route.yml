@@ -19,3 +19,7 @@
     - name: Print Static Routes
       debug:
         var: static_routes
+
+    - assert:
+      that:
+        var: static_routes.stdout_lines[0] == "S        8.8.4.4 [1/0] via 10.10.0.2"
