@@ -12,7 +12,7 @@
     - name: Confirm Route in Routing Table
       ios_command:
         commands:
-          - show ip route Static
+          - show ip route static | include 8.8.4.4
       
       register: static_routes
 
