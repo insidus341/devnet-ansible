@@ -11,6 +11,7 @@
       register:
         interfaces
 
-    - name: Print Interfaces
-      debug: 
-        var: interfaces
+    - name: Confirm Interface 2
+      assert:
+        that:
+          interfacesansible_net_interfaces.GigabitEthernet2.ipv4[0].address == "10.10.0.1"
