@@ -1,0 +1,15 @@
+- name: CONFIRM LAN2 INTERFACE
+  hosts: csr1kv-1
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Get Interfaces
+      ios_facts:
+        gather_subset: "interfaces"
+      
+      register:
+        interfaces
+
+    - name: Print Interfaces
+      debug: interfaces
