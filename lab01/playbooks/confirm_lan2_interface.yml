@@ -14,4 +14,4 @@
     - name: Confirm Interface 2
       assert:
         that:
-          interfaces["ansible_facts"]["ansible_net_interfaces"]["ipv4"][0]["address"] == "10.10.0.1"
+          interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["ipv4"][0]["address"] == "10.10.0.1"
