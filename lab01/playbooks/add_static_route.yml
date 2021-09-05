@@ -1,15 +1,14 @@
 - name: ADD STATIC ROUTE AND VALIDATE CHANGE
-  hosts: csr1kv
+  hosts: csr1kv1
   connection: network_cli
   gather_facts: no
 
   tasks:
     - name: Gather Interface facts
       ios_facts:
-        gather_subset: "config"
+        gather_subset: "interfaces"
       
       register: "config"
     
     - name: Output Config
-      debug:
-        var: config
+      debug: msg ="{{ config.stdout }}"
