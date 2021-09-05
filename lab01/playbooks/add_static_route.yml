@@ -4,11 +4,18 @@
   gather_facts: no
 
   tasks:
-    - name: Gather Interface facts
-      ios_facts:
-        gather_subset: "interfaces"
+    - name: Add Static Route
+      ios_config:
+        commands:
+          - ip route 8.8.4.4 255.255.255.255 10.10.0.2
+
+    - name: Confirm Route in Routing Table
+      ios_command:
+        commands:
+          - show ip route Static
       
-      register: "config"
-    
-    - name: Output Config
-      debug: msg ="{{ config.stdout }}"
+      register: static_routes
+
+    - name: Print Static Routes
+      debug:
+        var: static_routes
