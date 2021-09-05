@@ -12,4 +12,5 @@
         interfaces
 
     - name: Print Interfaces
-      debug: var.interfaces
+      debug: 
+        var: interfaces
