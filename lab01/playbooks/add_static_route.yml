@@ -18,7 +18,7 @@
 
     - name: Print Static Routes
       debug:
-        var: static_routes
+        var: static_routes.stdout_lines[0][0]
 
     - name: Confirm Static Route Exists
       assert:
