@@ -14,4 +14,8 @@
     - name: Confirm Interface 2
       assert:
         that:
-          interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["ipv4"][0]["address"] == "10.10.0.1"
+          - interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["ipv4"][0]["address"] == "10.10.0.1"
+          - interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["ipv4"][0]["subnet"] == "24"
+          - interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["lineprotocol"] == "up"
+          - interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["operstatus"] == "up"
+          - interfaces["ansible_facts"]["ansible_net_interfaces"]["GigabitEthernet2"]["description"] == "To other router"
