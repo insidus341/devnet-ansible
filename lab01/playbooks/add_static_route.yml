@@ -1,0 +1,15 @@
+- name: ADD STATIC ROUTE AND VALIDATE CHANGE
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Gather Interface facts
+      ios_facts:
+        gather_subset: "config"
+      
+      register: "config"
+    
+    - name: Output Config
+      debug:
+        var: config
