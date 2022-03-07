@@ -6,6 +6,7 @@
   gather_facts: no
 
   tasks:
+    # Generate configuration for the devices and save this in the /config/ directory
     - name: Generate template for R2R Interface
       template:
         src: ../templates/lan_r2r_interface.j2
@@ -17,7 +18,7 @@
         dest: configs/{{ inventory_hostname }}-lan_interface.cfg
 
 
-
+    # Apply the template configuration to the devices
     - name: Configure R2R Interface
       ios_config:
         src: ../templates/lan_r2r_interface.j2
@@ -28,6 +29,7 @@
         src: ../templates/lan_interface.j2
         save_when: modified
 
+---
 
 - name: ENABLE CDP
   hosts: csr1kv
