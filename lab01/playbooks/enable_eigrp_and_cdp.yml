@@ -1,0 +1,25 @@
+---
+
+- name: ENABLE CDP
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Enable CDP
+      ios_config:
+        commands: "cdp run"
+
+
+- name: ENABLE ROUTING PROTOCOLS
+  hosts: csr1kv
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Enable EIGRP
+      ios_config:
+        lines:
+          - network 10.0.0.0 0.255.255.255
+        parents: router eigrp 10
+        save_when: modified
